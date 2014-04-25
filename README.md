@@ -20,5 +20,10 @@ For access to 'lir' from anywhere on your workstation add the following to the P
 
 Usage
 =====
+To list all the documents available in the Lucene Index
 
+	`lir -i /Users/satya.avasarala/lukeprod/ -listall`
 
+To search for a specific field name and value across all the documents
+
+	`lir -i /Users/satya.avasarala/lukeprod/ -search username,john`
