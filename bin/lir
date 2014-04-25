@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 if [ "$LIR_HOME" = "" ] ; then
     echo "Please set your LIR_HOME"
     exit 1
