@@ -21,6 +21,7 @@ For access to 'lir' from anywhere on your workstation add the following to the P
 Build
 =====
 Build the `lir` by using
+
 	$LIR_HOME/bin/build-lir
 
 Usage
