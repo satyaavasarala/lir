@@ -1,7 +1,7 @@
-LIR
-===
+LIR (Lucene Index Reader)
+=========================
 
-Lucene Index Reader
+`lir` is a Lucene Index reading utility. Right now it can do two things. One, it can read through all the documents available in a index directory and print them out. Secondly, it can search through the index for a field name and value combination, specified by the user,  and retrive all the documents that contain the combination. 
 
 Setup
 =====
