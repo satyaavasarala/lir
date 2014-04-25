@@ -1,0 +1,4 @@
+lir
+===
+
+Lucene Index Reader
