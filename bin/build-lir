@@ -7,7 +7,7 @@ if [ "$LIR_HOME" = "" ] ; then
 fi
 
 if [ -d "$LIR_HOME/classes" ]; then
-  rmdir $LIR_HOME/classes
+  rm -rf $LIR_HOME/classes
 fi
 
 mkdir $LIR_HOME/classes

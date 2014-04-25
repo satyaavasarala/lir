@@ -18,6 +18,11 @@ For access to 'lir' from anywhere on your workstation add the following to the P
 	export PATH="$LIR_HOME/bin:$PATH"
 
 
+Build
+=====
+Build the `lir` by using
+	$LIR_HOME/bin/build-lir
+
 Usage
 =====
 To list all the documents available in the Lucene Index
