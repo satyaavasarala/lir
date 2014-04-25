@@ -10,4 +10,8 @@ for arg in "$@" ; do
     ant_exec_args="$ant_exec_args $arg"
 done
 
+javac -d $LIR_HOME/classes -classpath "$LIR_HOME/lib/*" $LIR_HOME/src/com/lir/idxreader/*.java
+
+javac -d $LIR_HOME/classes -classpath "$LIR_HOME/lib/*:$LIR_HOME/classes/." $LIR_HOME/src/com/lir/cli/*.java
+
 java -classpath "$LIR_HOME/lib/*:$LIR_HOME/classes/." com.lir.cli.Lir $ant_exec_args
