@@ -22,7 +22,7 @@ Build
 =====
 Build the `lir` by using
 
-	$LIR_HOME/bin/build-lir
+	build-lir
 
 Usage
 =====
