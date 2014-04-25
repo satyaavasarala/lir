@@ -7,7 +7,7 @@ Setup
 =====
 Clone the repo to your workstation
 
-	`git clone https://github.com/satyaavasarala/lir`
+	git clone https://github.com/satyaavasarala/lir
 
 Set the LIR_HOME in ~/.profile if on Linux or ENV variables if on Windows
 
