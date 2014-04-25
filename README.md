@@ -11,7 +11,7 @@ Clone the repo to your workstation
 
 Set the LIR_HOME in ~/.profile if on Linux or ENV variables if on Windows
 
-	export LIR_HOME=/Users/satya.avasarala/workspace/lir
+	export LIR_HOME=<<your clone location>>
 
 For access to 'lir' from anywhere on your workstation add the following to the PATH
 
