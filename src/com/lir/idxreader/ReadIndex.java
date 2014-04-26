@@ -6,21 +6,22 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.lucene.document.Document;
+import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexableField;
 import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.store.NIOFSDirectory;
 
 public class ReadIndex {
 
 	private File m_indexDir;
 	private IndexReader m_indexReader;
 
-	@SuppressWarnings("deprecation")
 	public ReadIndex(String indexDirPath) {
 		super();
 		this.m_indexDir = new File(indexDirPath);
 		try {
-			this.m_indexReader = IndexReader.open(FSDirectory.open(m_indexDir));
+			this.m_indexReader = DirectoryReader.open(new NIOFSDirectory(m_indexDir));
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			System.exit(0);
