@@ -1,4 +1,5 @@
 package com.lir.idxreader;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -9,12 +10,11 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexableField;
 import org.apache.lucene.store.FSDirectory;
 
-
 public class ReadIndex {
-	
+
 	private File m_indexDir;
 	private IndexReader m_indexReader;
-	
+
 	@SuppressWarnings("deprecation")
 	public ReadIndex(String indexDirPath) {
 		super();
@@ -27,59 +27,58 @@ public class ReadIndex {
 		}
 	}
 
-	
 	/**
 	 * Prints all the FieldNames and their Values for a given document.
+	 * 
 	 * @param doc
 	 */
-	public void printAllFieldsOfADocument(Document doc){
-	       System.out.println("###################################");
-	       //System.out.println("Details of the document "+doc.toString());
-	        List<IndexableField> fields = doc.getFields();
-			Iterator<IndexableField> itr = fields.iterator();
-			while(itr.hasNext()) {
-				IndexableField field = (IndexableField)itr.next();
-				System.out.println(field.name()+" : "+field.stringValue());
-			}
+	public void printAllFieldsOfADocument(Document doc) {
+		System.out.println("###################################");
+		// System.out.println("Details of the document "+doc.toString());
+		List<IndexableField> fields = doc.getFields();
+		Iterator<IndexableField> itr = fields.iterator();
+		while (itr.hasNext()) {
+			IndexableField field = (IndexableField) itr.next();
+			System.out.println(field.name() + " : " + field.stringValue());
+		}
 	}
-	
+
 	/**
 	 * Searches the Index with provided fieldName and fieldValue combination.
+	 * 
 	 * @param fieldName
 	 * @param fieldValue
 	 */
-	public void searchIndex(String fieldName, String fieldValue){
-		Document doc=null;
-		for ( int i = 0; i < m_indexReader.numDocs(); i++)
-		{
+	public void searchIndex(String fieldName, String fieldValue) {
+		Document doc = null;
+		for (int i = 0; i < m_indexReader.numDocs(); i++) {
 			try {
-				doc = m_indexReader.document( i);
+				doc = m_indexReader.document(i);
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
 			}
-			//System.out.println(doc.getField(fieldName));
-			if(doc.getField(fieldName)!=null){
-				if(doc.getField(fieldName).toString().contains(fieldValue)) {		
+			// System.out.println(doc.getField(fieldName));
+			if (doc.getField(fieldName) != null) {
+				if (doc.getField(fieldName).toString().contains(fieldValue)) {
 					printAllFieldsOfADocument(doc);
 				}
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * 
 	 */
-	public void listAllDocumentsDetails(){
-		try{
-			System.out.println("Reading "+m_indexReader.numDocs()+" documents of the Index");
-			Document d=null;
-			for ( int i = 0; i < m_indexReader.numDocs(); i++)
-			{
-				d = m_indexReader.document( i);
-				printAllFieldsOfADocument(d); 
+	public void listAllDocumentsDetails() {
+		try {
+			System.out.println("Reading " + m_indexReader.numDocs()
+					+ " documents of the Index");
+			Document d = null;
+			for (int i = 0; i < m_indexReader.numDocs(); i++) {
+				d = m_indexReader.document(i);
+				printAllFieldsOfADocument(d);
 			}
-		}catch (IOException e) {
+		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
 	}
