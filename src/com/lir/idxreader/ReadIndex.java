@@ -65,6 +65,7 @@ public class ReadIndex {
 				}
 			}
 		}
+		closeReader();
 	}
 
 	/**
@@ -79,6 +80,15 @@ public class ReadIndex {
 				d = m_indexReader.document(i);
 				printAllFieldsOfADocument(d);
 			}
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		closeReader();
+	}
+	
+	public void closeReader(){
+		try {
+			this.m_indexReader.close();
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
