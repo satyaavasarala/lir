@@ -28,8 +28,8 @@ Usage
 =====
 To list all the documents available in the Lucene Index
 
-	lir -i /Users/satya.avasarala/lucene-data/ -listall
+	lir -i $LIR_HOME/test-index-small/ -listall
 
 To search for a specific field name and value across all the documents
 
-	lir -i /Users/satya.avasarala/lucene-data/ -search username,john
+	lir -i $LIR_HOME/test-index-small/ -search firstname,firstName500
